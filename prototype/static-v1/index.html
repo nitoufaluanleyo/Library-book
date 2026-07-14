@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>用户首页 | 图书馆座位预约系统</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <header class="app-topbar">
+    <div class="topbar-inner">
+      <a class="brand-lockup" href="index.html" aria-label="图书馆座位预约系统首页">
+        <span class="brand-mark" aria-hidden="true">阅</span>
+        <span class="brand-name">图书馆座位预约</span>
+        <span class="version-chip">static-v1</span>
+      </a>
+      <nav class="desktop-nav" aria-label="用户端主导航">
+        <a class="active" href="index.html" aria-current="page">首页</a>
+        <a href="seats.html">座位列表</a>
+        <a href="my-reservations.html">我的预约</a>
+      </nav>
+      <div class="account-switch">
+        <span class="account-label text-muted small">体验账号</span>
+        <select class="form-select" data-account-switch aria-label="切换体验账号">
+          <option selected>王同学</option>
+          <option>李同学</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="user-main" id="main-content">
+    <div class="alert-prototype alert-success-soft mb-3" data-state-view="success" role="status">
+      <span aria-hidden="true">✓</span>
+      <div><strong>账号切换成功</strong>当前体验账号已更新为王同学。</div>
+    </div>
+
+    <section class="overview-panel" data-state-view="default success">
+      <div class="welcome-block">
+        <div>
+          <p class="eyebrow">当前体验用户 · 王同学</p>
+          <h1>安静学习，从提前选座开始</h1>
+          <p>查看图书馆座位基础状态，选择适合自己的日期和固定时段。</p>
+        </div>
+        <div class="overview-actions">
+          <a class="btn btn-brand" href="seats.html">查看座位</a>
+          <a class="btn btn-outline-brand" href="my-reservations.html">我的预约</a>
+        </div>
+      </div>
+      <div class="metric-grid" aria-label="座位概况">
+        <div class="metric-tile">
+          <span class="metric-label">座位总数</span>
+          <span class="metric-value">12</span>
+        </div>
+        <div class="metric-tile">
+          <span class="metric-label">启用座位</span>
+          <span class="metric-value">10</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="empty-state" data-state-view="empty">
+      <div class="empty-symbol" aria-hidden="true">座</div>
+      <h2>暂无座位数据</h2>
+      <p>座位信息尚未准备好，你仍可进入列表查看空状态。</p>
+      <a class="btn btn-brand" href="seats.html?state=empty">查看座位列表</a>
+    </section>
+
+    <div class="alert-prototype alert-danger-soft" data-state-view="error" role="alert">
+      <span aria-hidden="true">!</span>
+      <div><strong>首页数据加载失败</strong>请刷新页面后重试。</div>
+    </div>
+
+    <section class="section-block" data-state-view="default success">
+      <div class="section-heading">
+        <h2>常用区域</h2>
+        <a href="seats.html">查看全部</a>
+      </div>
+      <div class="quick-list">
+        <a class="quick-item" href="seats.html">
+          <span><strong>安静区</strong><small>适合长时间专注学习</small></span>
+          <span aria-hidden="true">›</span>
+        </a>
+        <a class="quick-item" href="seats.html">
+          <span><strong>阅览区</strong><small>靠近图书借阅区</small></span>
+          <span aria-hidden="true">›</span>
+        </a>
+        <a class="quick-item" href="seats.html">
+          <span><strong>靠窗区</strong><small>自然采光更充足</small></span>
+          <span aria-hidden="true">›</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="prototype-note">
+      启用座位表示座位可参与预约，具体时段是否可选请在预约提交页确认。
+      <a class="ms-2" href="admin-login.html">管理员入口</a>
+    </p>
+  </main>
+
+  <nav class="mobile-bottom-nav" aria-label="用户端底部导航">
+    <a class="active" href="index.html" aria-current="page"><span aria-hidden="true">首</span><span>首页</span></a>
+    <a href="seats.html"><span aria-hidden="true">座</span><span>座位</span></a>
+    <a href="my-reservations.html"><span aria-hidden="true">约</span><span>预约</span></a>
+  </nav>
+
+  <script src="assets/bootstrap.bundle.min.js"></script>
+  <script src="assets/prototype.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>座位列表 | 图书馆座位预约系统</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <header class="app-topbar">
+    <div class="topbar-inner">
+      <a class="brand-lockup" href="index.html" aria-label="图书馆座位预约系统首页">
+        <span class="brand-mark" aria-hidden="true">阅</span>
+        <span class="brand-name">图书馆座位预约</span>
+        <span class="version-chip">static-v2</span>
+      </a>
+      <nav class="desktop-nav" aria-label="用户端主导航">
+        <a href="index.html">首页</a>
+        <a class="active" href="seats.html" aria-current="page">座位列表</a>
+        <a href="my-reservations.html">我的预约</a>
+      </nav>
+      <div class="account-switch">
+        <span class="account-label text-muted small">体验账号</span>
+        <select class="form-select" data-account-switch aria-label="切换体验账号">
+          <option selected>王同学</option>
+          <option>李同学</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="user-main" id="main-content">
+    <header class="page-heading">
+      <div>
+        <p class="eyebrow">U-P02</p>
+        <h1>座位列表</h1>
+        <p>座位状态表示启用或停用，具体时段请进入预约页确认。</p>
+      </div>
+      <a class="btn btn-outline-brand" href="my-reservations.html">查看我的预约</a>
+    </header>
+
+    <section class="filter-surface mb-3" aria-label="座位筛选">
+      <div class="filter-group">
+        <div>
+          <label class="field-label" for="area-filter">区域</label>
+          <select class="form-select" id="area-filter">
+            <option selected>全部区域</option>
+            <option>安静区</option>
+            <option>阅览区</option>
+            <option>靠窗区</option>
+          </select>
+        </div>
+        <a class="btn btn-outline-secondary" href="seats.html">清除筛选</a>
+      </div>
+      <span class="text-muted small">共 8 个演示座位</span>
+    </section>
+
+    <div class="alert-prototype alert-danger-soft mb-3" data-state-view="error" role="alert">
+      <span aria-hidden="true">!</span>
+      <div><strong>座位列表加载失败</strong>请稍后刷新页面重试。</div>
+    </div>
+
+    <section class="seat-grid" data-state-view="default">
+      <a class="seat-card" href="seat-detail.html">
+        <span><span class="seat-title">A-001</span><span class="seat-meta">安静区 · 靠窗 · 单人座</span></span>
+        <span class="seat-card-side"><span class="status-tag status-enabled">启用</span><span aria-hidden="true">›</span></span>
+      </a>
+      <a class="seat-card" href="seat-detail.html">
+        <span><span class="seat-title">A-002</span><span class="seat-meta">安静区 · 近电源 · 单人座</span></span>
+        <span class="seat-card-side"><span class="status-tag status-enabled">启用</span><span aria-hidden="true">›</span></span>
+      </a>
+      <a class="seat-card" href="seat-detail.html">
+        <span><span class="seat-title">A-012</span><span class="seat-meta">安静区 · 近出口 · 单人座</span></span>
+        <span class="seat-card-side"><span class="status-tag status-enabled">启用</span><span aria-hidden="true">›</span></span>
+      </a>
+      <a class="seat-card" href="seat-detail.html">
+        <span><span class="seat-title">B-006</span><span class="seat-meta">阅览区 · 近书架 · 单人座</span></span>
+        <span class="seat-card-side"><span class="status-tag status-enabled">启用</span><span aria-hidden="true">›</span></span>
+      </a>
+      <a class="seat-card" href="seat-detail.html">
+        <span><span class="seat-title">B-008</span><span class="seat-meta">阅览区 · 通道侧 · 单人座</span></span>
+        <span class="seat-card-side"><span class="status-tag status-enabled">启用</span><span aria-hidden="true">›</span></span>
+      </a>
+      <a class="seat-card" href="seat-detail.html">
+        <span><span class="seat-title">C-003</span><span class="seat-meta">靠窗区 · 自然采光 · 单人座</span></span>
+        <span class="seat-card-side"><span class="status-tag status-enabled">启用</span><span aria-hidden="true">›</span></span>
+      </a>
+      <a class="seat-card is-disabled" href="seat-detail.html?state=disabled">
+        <span><span class="seat-title">C-004</span><span class="seat-meta">靠窗区 · 维护中 · 单人座</span></span>
+        <span class="seat-card-side"><span class="status-tag status-disabled">停用</span><span aria-hidden="true">›</span></span>
+      </a>
+      <a class="seat-card" href="seat-detail.html">
+        <span><span class="seat-title">D-002</span><span class="seat-meta">综合区 · 近服务台 · 单人座</span></span>
+        <span class="seat-card-side"><span class="status-tag status-enabled">启用</span><span aria-hidden="true">›</span></span>
+      </a>
+    </section>
+
+    <section class="empty-state" data-state-view="empty">
+      <div class="empty-symbol" aria-hidden="true">座</div>
+      <h2>该区域暂无座位</h2>
+      <p>可以清除筛选，查看其他区域的座位。</p>
+      <a class="btn btn-brand" href="seats.html">清除筛选</a>
+    </section>
+  </main>
+
+  <nav class="mobile-bottom-nav" aria-label="用户端底部导航">
+    <a href="index.html"><span aria-hidden="true">首</span><span>首页</span></a>
+    <a class="active" href="seats.html" aria-current="page"><span aria-hidden="true">座</span><span>座位</span></a>
+    <a href="my-reservations.html"><span aria-hidden="true">约</span><span>预约</span></a>
+  </nav>
+
+  <script src="assets/bootstrap.bundle.min.js"></script>
+  <script src="assets/prototype.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>预约提交 | 图书馆座位预约系统</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <header class="app-topbar">
+    <div class="topbar-inner">
+      <a class="brand-lockup" href="index.html" aria-label="图书馆座位预约系统首页">
+        <span class="brand-mark" aria-hidden="true">阅</span>
+        <span class="brand-name">图书馆座位预约</span>
+        <span class="version-chip">static-v1</span>
+      </a>
+      <nav class="desktop-nav" aria-label="用户端主导航">
+        <a href="index.html">首页</a>
+        <a class="active" href="seats.html">座位列表</a>
+        <a href="my-reservations.html">我的预约</a>
+      </nav>
+      <div class="account-switch">
+        <span class="account-label text-muted small">体验账号</span>
+        <select class="form-select" data-account-switch aria-label="切换体验账号">
+          <option selected>王同学</option>
+          <option>李同学</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="user-main" id="main-content">
+    <header class="page-heading">
+      <div>
+        <p class="eyebrow">U-P04</p>
+        <h1>预约提交</h1>
+        <p>确认座位后，选择预约日期与固定时段。</p>
+      </div>
+      <a class="btn btn-outline-secondary" href="seat-detail.html"><span aria-hidden="true">‹</span> 返回详情</a>
+    </header>
+
+    <div class="alert-prototype alert-danger-soft mb-3" data-state-view="error" role="alert">
+      <span aria-hidden="true">!</span>
+      <div><strong>该座位在所选时段已被预约</strong>请选择其他时段后再次提交。</div>
+    </div>
+
+    <section class="empty-state" data-state-view="empty">
+      <div class="empty-symbol" aria-hidden="true">时</div>
+      <h2>当天暂无可预约时段</h2>
+      <p>可以选择其他日期，或返回座位列表选择其他座位。</p>
+      <a class="btn btn-brand" href="reserve.html">选择其他日期</a>
+      <a class="btn btn-outline-brand ms-1" href="seats.html">返回座位列表</a>
+    </section>
+
+    <form class="form-surface needs-validation" data-state-view="default error" data-prototype-target="my-reservations.html?state=success" novalidate>
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pb-3 mb-4 border-bottom">
+        <div>
+          <span class="field-label">预约座位</span>
+          <strong class="fs-5">A-001 · 安静区</strong>
+        </div>
+        <span class="status-tag status-enabled">启用</span>
+      </div>
+
+      <fieldset class="mb-4">
+        <legend class="h6 fw-bold mb-1">选择日期</legend>
+        <p class="text-muted small mb-0">可预约今天起 7 个自然日</p>
+        <div class="date-strip" data-choice-group>
+          <button class="date-choice active" type="button" data-choice aria-pressed="true"><strong>07-13</strong><small>今天</small></button>
+          <button class="date-choice" type="button" data-choice aria-pressed="false"><strong>07-14</strong><small>周二</small></button>
+          <button class="date-choice" type="button" data-choice aria-pressed="false"><strong>07-15</strong><small>周三</small></button>
+          <button class="date-choice" type="button" data-choice aria-pressed="false"><strong>07-16</strong><small>周四</small></button>
+          <button class="date-choice" type="button" data-choice aria-pressed="false"><strong>07-17</strong><small>周五</small></button>
+          <button class="date-choice" type="button" data-choice aria-pressed="false"><strong>07-18</strong><small>周六</small></button>
+          <button class="date-choice" type="button" data-choice aria-pressed="false"><strong>07-19</strong><small>周日</small></button>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend class="h6 fw-bold mb-1">选择时段</legend>
+        <p class="text-muted small mb-0">每天固定 3 个时段</p>
+        <div class="time-grid" data-choice-group>
+          <button class="time-choice disabled" type="button" data-choice aria-pressed="false" disabled><strong>上午</strong><small>08:00-12:00 · 已开始</small></button>
+          <button class="time-choice active" type="button" data-choice aria-pressed="true"><strong>下午</strong><small>14:00-18:00 · 可预约</small></button>
+          <button class="time-choice" type="button" data-choice aria-pressed="false"><strong>晚上</strong><small>18:30-21:30 · 可预约</small></button>
+        </div>
+      </fieldset>
+
+      <div class="alert-prototype alert-info-soft mt-4" role="status">
+        <span aria-hidden="true">i</span>
+        <div><strong>当前体验用户：王同学</strong>提交后可在“我的预约”查看或取消未开始预约。</div>
+      </div>
+
+      <div class="form-actions">
+        <a class="btn btn-outline-secondary" href="seat-detail.html">取消</a>
+        <button class="btn btn-brand" type="submit">确认预约</button>
+      </div>
+    </form>
+  </main>
+
+  <nav class="mobile-bottom-nav" aria-label="用户端底部导航">
+    <a href="index.html"><span aria-hidden="true">首</span><span>首页</span></a>
+    <a class="active" href="seats.html"><span aria-hidden="true">座</span><span>座位</span></a>
+    <a href="my-reservations.html"><span aria-hidden="true">约</span><span>预约</span></a>
+  </nav>
+
+  <script src="assets/bootstrap.bundle.min.js"></script>
+  <script src="assets/prototype.js"></script>
+</body>
+</html>

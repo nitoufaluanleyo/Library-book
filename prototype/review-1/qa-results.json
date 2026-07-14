@@ -1,0 +1,321 @@
+{
+  "generatedAt": "2026-07-13T02:49:21.186Z",
+  "baseUrl": "http://127.0.0.1:4173/prototype/static-v2",
+  "pages": [
+    {
+      "name": "U-P01-home",
+      "url": "index.html",
+      "viewport": "390x844",
+      "status": 200,
+      "ok": true,
+      "metrics": {
+        "title": "用户首页 | 图书馆座位预约系统",
+        "bodyWidth": 390,
+        "viewportWidth": 390,
+        "mainVisible": true,
+        "visibleTextLength": 208,
+        "links": 16,
+        "forms": 0,
+        "unnamedInteractive": [],
+        "overflow": []
+      },
+      "errors": []
+    },
+    {
+      "name": "U-P02-seats",
+      "url": "seats.html",
+      "viewport": "390x844",
+      "status": 200,
+      "ok": true,
+      "metrics": {
+        "title": "座位列表 | 图书馆座位预约系统",
+        "bodyWidth": 390,
+        "viewportWidth": 390,
+        "mainVisible": true,
+        "visibleTextLength": 331,
+        "links": 19,
+        "forms": 0,
+        "unnamedInteractive": [],
+        "overflow": []
+      },
+      "errors": []
+    },
+    {
+      "name": "U-P03-detail",
+      "url": "seat-detail.html",
+      "viewport": "390x844",
+      "status": 200,
+      "ok": true,
+      "metrics": {
+        "title": "座位详情 | 图书馆座位预约系统",
+        "bodyWidth": 390,
+        "viewportWidth": 390,
+        "mainVisible": true,
+        "visibleTextLength": 191,
+        "links": 13,
+        "forms": 0,
+        "unnamedInteractive": [],
+        "overflow": []
+      },
+      "errors": []
+    },
+    {
+      "name": "U-P04-reserve",
+      "url": "reserve.html",
+      "viewport": "390x844",
+      "status": 200,
+      "ok": true,
+      "metrics": {
+        "title": "预约提交 | 图书馆座位预约系统",
+        "bodyWidth": 390,
+        "viewportWidth": 390,
+        "mainVisible": true,
+        "visibleTextLength": 301,
+        "links": 12,
+        "forms": 1,
+        "unnamedInteractive": [],
+        "overflow": []
+      },
+      "errors": []
+    },
+    {
+      "name": "U-P05-my-reservations",
+      "url": "my-reservations.html",
+      "viewport": "390x844",
+      "status": 200,
+      "ok": true,
+      "metrics": {
+        "title": "我的预约 | 图书馆座位预约系统",
+        "bodyWidth": 390,
+        "viewportWidth": 390,
+        "mainVisible": true,
+        "visibleTextLength": 248,
+        "links": 14,
+        "forms": 0,
+        "unnamedInteractive": [],
+        "overflow": []
+      },
+      "errors": []
+    },
+    {
+      "name": "A-P01-login",
+      "url": "admin-login.html",
+      "viewport": "1366x768",
+      "status": 200,
+      "ok": true,
+      "metrics": {
+        "title": "管理员登录 | 图书馆座位预约系统",
+        "bodyWidth": 1366,
+        "viewportWidth": 1366,
+        "mainVisible": true,
+        "visibleTextLength": 102,
+        "links": 3,
+        "forms": 1,
+        "unnamedInteractive": [],
+        "overflow": []
+      },
+      "errors": []
+    },
+    {
+      "name": "A-P02-reservations",
+      "url": "admin-reservations.html",
+      "viewport": "1366x768",
+      "status": 200,
+      "ok": true,
+      "metrics": {
+        "title": "预约管理 | 图书馆座位预约系统",
+        "bodyWidth": 1366,
+        "viewportWidth": 1366,
+        "mainVisible": true,
+        "visibleTextLength": 361,
+        "links": 16,
+        "forms": 0,
+        "unnamedInteractive": [],
+        "overflow": []
+      },
+      "errors": []
+    },
+    {
+      "name": "A-P03-seats",
+      "url": "admin-seats.html",
+      "viewport": "1366x768",
+      "status": 200,
+      "ok": true,
+      "metrics": {
+        "title": "座位管理 | 图书馆座位预约系统",
+        "bodyWidth": 1366,
+        "viewportWidth": 1366,
+        "mainVisible": true,
+        "visibleTextLength": 447,
+        "links": 12,
+        "forms": 1,
+        "unnamedInteractive": [],
+        "overflow": []
+      },
+      "errors": []
+    },
+    {
+      "name": "A-P04-stats",
+      "url": "admin-stats.html",
+      "viewport": "1366x768",
+      "status": 200,
+      "ok": true,
+      "metrics": {
+        "title": "统计页 | 图书馆座位预约系统",
+        "bodyWidth": 1366,
+        "viewportWidth": 1366,
+        "mainVisible": true,
+        "visibleTextLength": 260,
+        "links": 14,
+        "forms": 0,
+        "unnamedInteractive": [],
+        "overflow": []
+      },
+      "errors": []
+    },
+    {
+      "name": "state-empty",
+      "url": "seats.html?state=empty",
+      "viewport": "390x844",
+      "status": 200,
+      "ok": true,
+      "metrics": {
+        "title": "座位列表 | 图书馆座位预约系统",
+        "bodyWidth": 390,
+        "viewportWidth": 390,
+        "mainVisible": true,
+        "visibleTextLength": 149,
+        "links": 19,
+        "forms": 0,
+        "unnamedInteractive": [],
+        "overflow": []
+      },
+      "errors": []
+    },
+    {
+      "name": "state-conflict",
+      "url": "reserve.html?state=error",
+      "viewport": "390x844",
+      "status": 200,
+      "ok": true,
+      "metrics": {
+        "title": "预约提交 | 图书馆座位预约系统",
+        "bodyWidth": 390,
+        "viewportWidth": 390,
+        "mainVisible": true,
+        "visibleTextLength": 330,
+        "links": 12,
+        "forms": 1,
+        "unnamedInteractive": [],
+        "overflow": []
+      },
+      "errors": []
+    },
+    {
+      "name": "state-admin-error",
+      "url": "admin-stats.html?state=error",
+      "viewport": "1366x768",
+      "status": 200,
+      "ok": true,
+      "metrics": {
+        "title": "统计页 | 图书馆座位预约系统",
+        "bodyWidth": 1366,
+        "viewportWidth": 1366,
+        "mainVisible": true,
+        "visibleTextLength": 196,
+        "links": 14,
+        "forms": 0,
+        "unnamedInteractive": [],
+        "overflow": []
+      },
+      "errors": []
+    }
+  ],
+  "flows": {
+    "userFlow": true,
+    "adminFlow": true,
+    "userSteps": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "adminSteps": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "components": {
+    "editorVisible": true,
+    "modalVisible": true
+  },
+  "keyboard": {
+    "firstFocusIsSkipLink": true,
+    "secondFocusHasName": true,
+    "passed": true
+  },
+  "contrast": {
+    "pairs": [
+      {
+        "name": "mainText",
+        "foreground": "#202725",
+        "background": "#ffffff",
+        "ratio": 15.24,
+        "passed": true
+      },
+      {
+        "name": "mutedText",
+        "foreground": "#65716d",
+        "background": "#ffffff",
+        "ratio": 5.08,
+        "passed": true
+      },
+      {
+        "name": "primaryButton",
+        "foreground": "#ffffff",
+        "background": "#1f6b5c",
+        "ratio": 6.33,
+        "passed": true
+      },
+      {
+        "name": "successTag",
+        "foreground": "#25613b",
+        "background": "#e8f4ec",
+        "ratio": 6.52,
+        "passed": true
+      },
+      {
+        "name": "reservedTag",
+        "foreground": "#2457a6",
+        "background": "#e8f0fe",
+        "ratio": 6.13,
+        "passed": true
+      },
+      {
+        "name": "warningTag",
+        "foreground": "#8a5a00",
+        "background": "#fff4d8",
+        "ratio": 5.41,
+        "passed": true
+      },
+      {
+        "name": "dangerTag",
+        "foreground": "#9b2c2c",
+        "background": "#fdecec",
+        "ratio": 6.59,
+        "passed": true
+      },
+      {
+        "name": "completedTag",
+        "foreground": "#58635f",
+        "background": "#ecefed",
+        "ratio": 5.39,
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "passed": true
+}

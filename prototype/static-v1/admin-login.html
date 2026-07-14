@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>管理员登录 | 图书馆座位预约系统</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到登录表单</a>
+  <main class="login-page" id="main-content">
+    <div class="login-shell">
+      <div class="login-brand">
+        <a class="brand-lockup" href="index.html">
+          <span class="brand-mark" aria-hidden="true">阅</span>
+          <span>图书馆座位预约</span>
+          <span class="version-chip">static-v1</span>
+        </a>
+      </div>
+      <section class="login-panel">
+        <p class="eyebrow">A-P01</p>
+        <h1>管理员登录</h1>
+        <p class="intro">进入后台查看预约、维护座位和基础统计。</p>
+
+        <div class="alert-prototype alert-danger-soft mb-3" data-state-view="error" role="alert">
+          <span aria-hidden="true">!</span>
+          <div><strong>账号或密码错误</strong>请检查后重新输入。</div>
+        </div>
+
+        <form class="needs-validation" data-prototype-target="admin-stats.html" novalidate>
+          <div class="mb-3">
+            <label class="field-label" for="username">用户名</label>
+            <input class="form-control" id="username" name="username" value="admin" autocomplete="username" required>
+            <div class="invalid-feedback">请输入用户名。</div>
+          </div>
+          <div class="mb-4">
+            <label class="field-label" for="password">密码</label>
+            <input class="form-control" id="password" name="password" type="password" value="prototype" autocomplete="current-password" required>
+            <div class="invalid-feedback">请输入密码。</div>
+          </div>
+          <button class="btn btn-brand w-100" type="submit">登录后台</button>
+          <a class="btn btn-outline-secondary w-100 mt-2" href="index.html">返回用户端</a>
+        </form>
+      </section>
+      <p class="prototype-note text-center">静态原型使用假账号，不进行真实身份验证。</p>
+    </div>
+  </main>
+
+  <script src="assets/bootstrap.bundle.min.js"></script>
+  <script src="assets/prototype.js"></script>
+</body>
+</html>

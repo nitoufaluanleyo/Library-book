@@ -1,0 +1,34 @@
+{
+  "prototypeVersion": "static-v2",
+  "referenceDate": "2026-07-13",
+  "users": [
+    { "id": 1, "displayName": "王同学" },
+    { "id": 2, "displayName": "李同学" }
+  ],
+  "seats": [
+    { "number": "A-001", "area": "安静区", "remark": "靠窗、近电源", "enabled": true },
+    { "number": "A-002", "area": "安静区", "remark": "近电源", "enabled": true },
+    { "number": "A-012", "area": "安静区", "remark": "近出口", "enabled": true },
+    { "number": "B-006", "area": "阅览区", "remark": "近书架", "enabled": true },
+    { "number": "B-008", "area": "阅览区", "remark": "通道侧", "enabled": true },
+    { "number": "C-003", "area": "靠窗区", "remark": "自然采光", "enabled": true },
+    { "number": "C-004", "area": "靠窗区", "remark": "设备维护中", "enabled": false },
+    { "number": "D-002", "area": "综合区", "remark": "近服务台", "enabled": true }
+  ],
+  "reservations": [
+    { "user": "王同学", "seat": "A-001", "date": "2026-07-13", "slot": "下午 14:00-18:00", "displayStatus": "已预约" },
+    { "user": "李同学", "seat": "B-006", "date": "2026-07-12", "slot": "上午 08:00-12:00", "displayStatus": "已完成" },
+    { "user": "王同学", "seat": "C-003", "date": "2026-07-11", "slot": "晚上 18:30-21:30", "displayStatus": "已取消" }
+  ],
+  "statistics": {
+    "seatTotal": 8,
+    "enabledSeats": 7,
+    "disabledSeats": 1,
+    "reservationTotal": 3,
+    "todayNonCancelledReservations": 1
+  },
+  "viewportTargets": {
+    "user": "390x844",
+    "admin": "1366x768"
+  }
+}

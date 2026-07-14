@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>座位管理 | 图书馆座位预约系统</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <div class="admin-layout">
+    <aside class="admin-sidebar" aria-label="管理端侧边栏">
+      <a class="brand-lockup" href="admin-stats.html"><span class="brand-mark" aria-hidden="true">阅</span><span>座位预约后台</span></a>
+      <nav class="admin-nav">
+        <a href="admin-stats.html"><span aria-hidden="true">▦</span>统计</a>
+        <a href="admin-reservations.html"><span aria-hidden="true">≡</span>预约管理</a>
+        <a class="active" href="admin-seats.html" aria-current="page"><span aria-hidden="true">□</span>座位管理</a>
+      </nav>
+      <div class="admin-sidebar-footer"><a class="d-block text-white-50 small mb-2" href="index.html">返回用户端</a><a class="d-block text-white text-decoration-none" href="admin-login.html">退出登录</a></div>
+    </aside>
+
+    <div>
+      <div class="admin-mobile-bar">
+        <a class="brand-lockup" href="admin-stats.html"><span class="brand-mark" aria-hidden="true">阅</span><span>管理后台</span></a>
+        <button class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#adminNav" aria-controls="adminNav" aria-label="打开管理导航">☰</button>
+      </div>
+      <main class="admin-content" id="main-content">
+        <header class="admin-header">
+          <div><p class="eyebrow">A-P03 · static-v2</p><h1>座位管理</h1><p>在同一页面新增、编辑和调整座位启停状态。</p></div>
+          <button class="btn btn-brand" type="button" data-bs-toggle="offcanvas" data-bs-target="#seatEditor" aria-controls="seatEditor">+ 新增座位</button>
+        </header>
+
+        <div class="alert-prototype alert-success-soft mb-3" data-state-view="success" role="status"><span aria-hidden="true">✓</span><div><strong>座位保存成功</strong>列表已显示最新数据。</div></div>
+        <div class="alert-prototype alert-danger-soft mb-3" data-state-view="error" role="alert"><span aria-hidden="true">!</span><div><strong>座位编号已存在</strong>请修改编号后重新保存。</div></div>
+
+        <section class="filter-bar" aria-label="座位列表工具栏">
+          <div class="filter-group">
+            <div><label class="field-label" for="seat-area">区域</label><select class="form-select" id="seat-area"><option selected>全部区域</option><option>安静区</option><option>阅览区</option><option>靠窗区</option></select></div>
+            <div><label class="field-label" for="seat-status">状态</label><select class="form-select" id="seat-status"><option selected>全部状态</option><option>启用</option><option>停用</option></select></div>
+          </div>
+          <span class="text-muted small">共 8 个演示座位</span>
+        </section>
+
+        <section class="admin-panel" data-state-view="default success error">
+          <div class="admin-panel-header"><h2>座位列表</h2><span class="text-muted small">座位启停仅从编辑面板修改</span></div>
+          <div class="table-responsive">
+            <table class="table align-middle">
+              <thead><tr><th scope="col">座位编号</th><th scope="col">区域</th><th scope="col">备注</th><th scope="col">状态</th><th scope="col">更新时间</th><th class="action-cell" scope="col">操作</th></tr></thead>
+              <tbody>
+                <tr><td><strong>A-001</strong></td><td>安静区</td><td>靠窗、近电源</td><td><span class="status-tag status-enabled">启用</span></td><td>07-13 09:30</td><td class="action-cell"><button class="btn btn-outline-brand btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#seatEditor">编辑</button></td></tr>
+                <tr><td><strong>A-002</strong></td><td>安静区</td><td>近电源</td><td><span class="status-tag status-enabled">启用</span></td><td>07-12 16:10</td><td class="action-cell"><button class="btn btn-outline-brand btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#seatEditor">编辑</button></td></tr>
+                <tr><td><strong>A-012</strong></td><td>安静区</td><td>近出口</td><td><span class="status-tag status-enabled">启用</span></td><td>07-12 15:45</td><td class="action-cell"><button class="btn btn-outline-brand btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#seatEditor">编辑</button></td></tr>
+                <tr><td><strong>B-006</strong></td><td>阅览区</td><td>近书架</td><td><span class="status-tag status-enabled">启用</span></td><td>07-12 14:22</td><td class="action-cell"><button class="btn btn-outline-brand btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#seatEditor">编辑</button></td></tr>
+                <tr><td><strong>B-008</strong></td><td>阅览区</td><td>通道侧</td><td><span class="status-tag status-enabled">启用</span></td><td>07-11 10:18</td><td class="action-cell"><button class="btn btn-outline-brand btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#seatEditor">编辑</button></td></tr>
+                <tr><td><strong>C-003</strong></td><td>靠窗区</td><td>自然采光</td><td><span class="status-tag status-enabled">启用</span></td><td>07-10 17:42</td><td class="action-cell"><button class="btn btn-outline-brand btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#seatEditor">编辑</button></td></tr>
+                <tr><td><strong>C-004</strong></td><td>靠窗区</td><td>设备维护中</td><td><span class="status-tag status-disabled">停用</span></td><td>07-13 08:55</td><td class="action-cell"><button class="btn btn-outline-brand btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#seatEditor">编辑</button></td></tr>
+                <tr><td><strong>D-002</strong></td><td>综合区</td><td>近服务台</td><td><span class="status-tag status-enabled">启用</span></td><td>07-09 13:20</td><td class="action-cell"><button class="btn btn-outline-brand btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#seatEditor">编辑</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="admin-panel" data-state-view="empty">
+          <div class="empty-state border-0"><div class="empty-symbol" aria-hidden="true">座</div><h2>暂无座位</h2><p>可以在当前页面打开新增面板，创建第一个座位。</p><button class="btn btn-brand" type="button" data-bs-toggle="offcanvas" data-bs-target="#seatEditor">+ 新增座位</button></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-end prototype-panel" tabindex="-1" id="seatEditor" aria-labelledby="seatEditorTitle">
+    <div class="offcanvas-header"><div><p class="eyebrow mb-0">同页编辑状态</p><h2 class="offcanvas-title fs-5" id="seatEditorTitle">新增 / 编辑座位</h2></div><button class="btn-close" type="button" data-bs-dismiss="offcanvas" aria-label="关闭"></button></div>
+    <form class="d-flex flex-column h-100 needs-validation" data-prototype-target="admin-seats.html?state=success" novalidate>
+      <div class="offcanvas-body">
+        <div class="mb-3"><label class="field-label" for="seat-number">座位编号</label><input class="form-control" id="seat-number" value="A-001" required><div class="invalid-feedback">请输入唯一座位编号。</div></div>
+        <div class="mb-3"><label class="field-label" for="editor-area">区域</label><select class="form-select" id="editor-area" required><option>安静区</option><option>阅览区</option><option>靠窗区</option></select></div>
+        <div class="mb-3"><label class="field-label" for="seat-remark">备注</label><textarea class="form-control" id="seat-remark" rows="3">靠窗、近电源</textarea></div>
+        <div><label class="field-label" for="editor-status">座位状态</label><select class="form-select" id="editor-status"><option selected>启用</option><option>停用</option></select><div class="form-text">停用后不自动取消已有预约。</div></div>
+      </div>
+      <div class="offcanvas-footer"><button class="btn btn-outline-secondary" type="button" data-bs-dismiss="offcanvas">取消</button><button class="btn btn-brand" type="submit">保存座位</button></div>
+    </form>
+  </div>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="adminNav" aria-labelledby="adminNavTitle">
+    <div class="offcanvas-header"><h2 class="offcanvas-title fs-5" id="adminNavTitle">管理导航</h2><button class="btn-close" type="button" data-bs-dismiss="offcanvas" aria-label="关闭"></button></div>
+    <div class="offcanvas-body"><nav class="d-grid gap-2"><a class="btn btn-outline-brand" href="admin-stats.html">统计</a><a class="btn btn-outline-brand" href="admin-reservations.html">预约管理</a><a class="btn btn-brand" href="admin-seats.html">座位管理</a><a class="btn btn-outline-secondary" href="admin-login.html">退出登录</a></nav></div>
+  </div>
+
+  <script src="assets/bootstrap.bundle.min.js"></script>
+  <script src="assets/prototype.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>座位详情 | 图书馆座位预约系统</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <header class="app-topbar">
+    <div class="topbar-inner">
+      <a class="brand-lockup" href="index.html" aria-label="图书馆座位预约系统首页">
+        <span class="brand-mark" aria-hidden="true">阅</span>
+        <span class="brand-name">图书馆座位预约</span>
+        <span class="version-chip">static-v2</span>
+      </a>
+      <nav class="desktop-nav" aria-label="用户端主导航">
+        <a href="index.html">首页</a>
+        <a class="active" href="seats.html">座位列表</a>
+        <a href="my-reservations.html">我的预约</a>
+      </nav>
+      <div class="account-switch">
+        <span class="account-label text-muted small">体验账号</span>
+        <select class="form-select" data-account-switch aria-label="切换体验账号">
+          <option selected>王同学</option>
+          <option>李同学</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="user-main" id="main-content">
+    <header class="page-heading">
+      <div>
+        <p class="eyebrow">U-P03</p>
+        <h1>座位详情</h1>
+        <p>查看座位基础信息和当前启停状态。</p>
+      </div>
+      <a class="btn btn-outline-secondary" href="seats.html"><span aria-hidden="true">‹</span> 返回列表</a>
+    </header>
+
+    <section class="detail-layout" data-state-view="default">
+      <article class="detail-surface">
+        <span class="status-tag status-enabled">启用</span>
+        <h2 class="detail-number">A-001</h2>
+        <p class="text-muted mb-0">安静区的单人学习座位，靠近窗边并配有电源插座。</p>
+        <dl class="detail-list">
+          <div><dt>所在区域</dt><dd>安静区</dd></div>
+          <div><dt>座位类型</dt><dd>单人座</dd></div>
+          <div><dt>位置备注</dt><dd>靠窗、近电源</dd></div>
+          <div><dt>座位状态</dt><dd>启用</dd></div>
+        </dl>
+      </article>
+      <aside class="action-panel">
+        <h2 class="h6 fw-bold">准备预约</h2>
+        <p>下一步选择日期和固定时段，系统将在提交时再次检查状态。</p>
+        <a class="btn btn-brand w-100" href="reserve.html">预约此座位</a>
+        <a class="btn btn-outline-brand w-100 mt-2" href="my-reservations.html">查看我的预约</a>
+      </aside>
+    </section>
+
+    <section class="detail-layout" data-state-view="disabled">
+      <article class="detail-surface">
+        <span class="status-tag status-disabled">停用</span>
+        <h2 class="detail-number">C-004</h2>
+        <p class="text-muted mb-0">该座位当前不参与预约，仍可查看基础信息。</p>
+        <dl class="detail-list">
+          <div><dt>所在区域</dt><dd>靠窗区</dd></div>
+          <div><dt>座位类型</dt><dd>单人座</dd></div>
+          <div><dt>位置备注</dt><dd>设备维护中</dd></div>
+          <div><dt>座位状态</dt><dd>停用</dd></div>
+        </dl>
+      </article>
+      <aside class="action-panel">
+        <div class="alert-prototype alert-warning-soft mb-3" role="status">
+          <span aria-hidden="true">!</span>
+          <div><strong>座位已停用</strong>当前无法进入预约提交页。</div>
+        </div>
+        <a class="btn btn-outline-brand w-100" href="seats.html">选择其他座位</a>
+      </aside>
+    </section>
+
+    <div data-state-view="error">
+      <div class="alert-prototype alert-danger-soft mb-3" role="alert">
+        <span aria-hidden="true">!</span>
+        <div><strong>座位不存在或已被移除</strong>请返回座位列表重新选择。</div>
+      </div>
+      <a class="btn btn-brand" href="seats.html">返回座位列表</a>
+    </div>
+  </main>
+
+  <nav class="mobile-bottom-nav" aria-label="用户端底部导航">
+    <a href="index.html"><span aria-hidden="true">首</span><span>首页</span></a>
+    <a class="active" href="seats.html" aria-current="page"><span aria-hidden="true">座</span><span>座位</span></a>
+    <a href="my-reservations.html"><span aria-hidden="true">约</span><span>预约</span></a>
+  </nav>
+
+  <script src="assets/bootstrap.bundle.min.js"></script>
+  <script src="assets/prototype.js"></script>
+</body>
+</html>

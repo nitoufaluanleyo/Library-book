@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>我的预约 | 图书馆座位预约系统</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <header class="app-topbar">
+    <div class="topbar-inner">
+      <a class="brand-lockup" href="index.html" aria-label="图书馆座位预约系统首页">
+        <span class="brand-mark" aria-hidden="true">阅</span>
+        <span class="brand-name">图书馆座位预约</span>
+        <span class="version-chip">static-v1</span>
+      </a>
+      <nav class="desktop-nav" aria-label="用户端主导航">
+        <a href="index.html">首页</a>
+        <a href="seats.html">座位列表</a>
+        <a class="active" href="my-reservations.html" aria-current="page">我的预约</a>
+      </nav>
+      <div class="account-switch">
+        <span class="account-label text-muted small">体验账号</span>
+        <select class="form-select" data-account-switch aria-label="切换体验账号">
+          <option selected>王同学</option>
+          <option>李同学</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="user-main" id="main-content">
+    <div class="alert-prototype alert-success-soft mb-3" data-state-view="success" role="status">
+      <span aria-hidden="true">✓</span>
+      <div><strong>预约成功</strong>A-001 · 07-13 下午已加入你的预约。</div>
+    </div>
+    <div class="alert-prototype alert-success-soft mb-3" data-state-view="cancelled" role="status">
+      <span aria-hidden="true">✓</span>
+      <div><strong>取消成功</strong>该时段已重新释放。</div>
+    </div>
+    <div class="alert-prototype alert-danger-soft mb-3" data-state-view="error" role="alert">
+      <span aria-hidden="true">!</span>
+      <div><strong>预约状态已变化</strong>请刷新页面后重试。</div>
+    </div>
+
+    <header class="page-heading">
+      <div>
+        <p class="eyebrow">U-P05 · 王同学</p>
+        <h1>我的预约</h1>
+        <p>待使用预约优先显示，历史记录保留用于查看。</p>
+      </div>
+      <a class="btn btn-brand" href="seats.html">继续选座</a>
+    </header>
+
+    <div data-state-view="default success cancelled">
+      <section>
+        <div class="section-heading"><h2>待使用</h2><span class="text-muted small">1 条</span></div>
+        <div class="reservation-stack">
+          <article class="reservation-card">
+            <div>
+              <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+                <h3>A-001 · 安静区</h3>
+                <span class="status-tag status-reserved">已预约</span>
+              </div>
+              <div class="reservation-meta">2026-07-13 · 下午 14:00-18:00</div>
+            </div>
+            <div class="reservation-actions">
+              <a class="btn btn-outline-brand btn-sm" href="seat-detail.html">查看座位</a>
+              <button class="btn btn-danger-soft btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#cancelModal">取消预约</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading"><h2>历史记录</h2><span class="text-muted small">2 条</span></div>
+        <div class="reservation-stack">
+          <article class="reservation-card">
+            <div>
+              <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+                <h3>B-006 · 阅览区</h3>
+                <span class="status-tag status-completed">已完成</span>
+              </div>
+              <div class="reservation-meta">2026-07-12 · 上午 08:00-12:00</div>
+            </div>
+            <div class="reservation-actions"><a class="btn btn-outline-brand btn-sm" href="seat-detail.html">查看座位</a></div>
+          </article>
+          <article class="reservation-card">
+            <div>
+              <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+                <h3>C-003 · 靠窗区</h3>
+                <span class="status-tag status-cancelled">已取消</span>
+              </div>
+              <div class="reservation-meta">2026-07-11 · 晚上 18:30-21:30</div>
+            </div>
+            <div class="reservation-actions"><a class="btn btn-outline-brand btn-sm" href="seat-detail.html">查看座位</a></div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <section class="empty-state" data-state-view="empty">
+      <div class="empty-symbol" aria-hidden="true">约</div>
+      <h2>暂无预约记录</h2>
+      <p>选择一个启用座位，预约适合你的日期和时段。</p>
+      <a class="btn btn-brand" href="seats.html">去查看座位</a>
+    </section>
+  </main>
+
+  <div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="cancelModalTitle">确认取消预约</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="关闭"></button>
+        </div>
+        <div class="modal-body">取消后，A-001 在 07-13 下午的时段将重新开放预约。</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">暂不取消</button>
+          <a class="btn btn-danger" href="my-reservations.html?state=cancelled">确认取消</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="mobile-bottom-nav" aria-label="用户端底部导航">
+    <a href="index.html"><span aria-hidden="true">首</span><span>首页</span></a>
+    <a href="seats.html"><span aria-hidden="true">座</span><span>座位</span></a>
+    <a class="active" href="my-reservations.html" aria-current="page"><span aria-hidden="true">约</span><span>预约</span></a>
+  </nav>
+
+  <script src="assets/bootstrap.bundle.min.js"></script>
+  <script src="assets/prototype.js"></script>
+</body>
+</html>

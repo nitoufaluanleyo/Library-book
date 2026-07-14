@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>预约管理 | 图书馆座位预约系统</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <div class="admin-layout">
+    <aside class="admin-sidebar" aria-label="管理端侧边栏">
+      <a class="brand-lockup" href="admin-stats.html"><span class="brand-mark" aria-hidden="true">阅</span><span>座位预约后台</span></a>
+      <nav class="admin-nav">
+        <a href="admin-stats.html"><span aria-hidden="true">▦</span>统计</a>
+        <a class="active" href="admin-reservations.html" aria-current="page"><span aria-hidden="true">≡</span>预约管理</a>
+        <a href="admin-seats.html"><span aria-hidden="true">□</span>座位管理</a>
+      </nav>
+      <div class="admin-sidebar-footer"><a class="d-block text-white-50 small mb-2" href="index.html">返回用户端</a><a class="d-block text-white text-decoration-none" href="admin-login.html">退出登录</a></div>
+    </aside>
+
+    <div>
+      <div class="admin-mobile-bar">
+        <a class="brand-lockup" href="admin-stats.html"><span class="brand-mark" aria-hidden="true">阅</span><span>管理后台</span></a>
+        <button class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#adminNav" aria-controls="adminNav" aria-label="打开管理导航">☰</button>
+      </div>
+      <main class="admin-content" id="main-content">
+        <header class="admin-header">
+          <div><p class="eyebrow">A-P02 · static-v2</p><h1>预约管理</h1><p>查看、筛选和取消尚未结束的有效预约。</p></div>
+          <span class="status-tag status-info">共 3 条</span>
+        </header>
+
+        <div class="alert-prototype alert-success-soft mb-3" data-state-view="success" role="status"><span aria-hidden="true">✓</span><div><strong>预约已取消</strong>记录状态和取消方已更新。</div></div>
+        <div class="alert-prototype alert-danger-soft mb-3" data-state-view="error" role="alert"><span aria-hidden="true">!</span><div><strong>预约状态已变化</strong>请刷新列表后重试。</div></div>
+
+        <section class="filter-bar" aria-label="预约筛选">
+          <div class="filter-group">
+            <div><label class="field-label" for="reservation-date">预约日期</label><input class="form-control" id="reservation-date" type="date" value="2026-07-13"></div>
+            <div><label class="field-label" for="reservation-status">展示状态</label><select class="form-select" id="reservation-status"><option selected>全部状态</option><option>已预约</option><option>已取消</option><option>已完成</option></select></div>
+            <a class="btn btn-brand" href="admin-reservations.html">应用筛选</a>
+          </div>
+          <a class="btn btn-outline-secondary" href="admin-reservations.html">清除筛选</a>
+        </section>
+
+        <section class="admin-panel" data-state-view="default success error">
+          <div class="admin-panel-header"><h2>预约记录</h2><span class="text-muted small">按预约日期倒序</span></div>
+          <div class="table-responsive">
+            <table class="table align-middle">
+              <thead><tr><th scope="col">体验用户</th><th scope="col">座位</th><th scope="col">预约日期</th><th scope="col">时段</th><th scope="col">状态</th><th scope="col">创建时间</th><th class="action-cell" scope="col">操作</th></tr></thead>
+              <tbody>
+                <tr><td><strong>王同学</strong></td><td>A-001 · 安静区</td><td>2026-07-13</td><td>下午 14:00-18:00</td><td><span class="status-tag status-reserved">已预约</span></td><td>07-13 09:42</td><td class="action-cell"><button class="btn btn-danger-soft btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#adminCancelModal">取消</button></td></tr>
+                <tr><td><strong>李同学</strong></td><td>B-006 · 阅览区</td><td>2026-07-12</td><td>上午 08:00-12:00</td><td><span class="status-tag status-completed">已完成</span></td><td>07-11 15:10</td><td class="action-cell"><button class="btn btn-outline-secondary btn-sm" type="button" disabled>不可操作</button></td></tr>
+                <tr><td><strong>王同学</strong></td><td>C-003 · 靠窗区</td><td>2026-07-11</td><td>晚上 18:30-21:30</td><td><span class="status-tag status-cancelled">已取消</span></td><td>07-10 20:35</td><td class="action-cell"><button class="btn btn-outline-secondary btn-sm" type="button" disabled>不可操作</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="admin-panel" data-state-view="empty">
+          <div class="empty-state border-0"><div class="empty-symbol" aria-hidden="true">约</div><h2>没有符合条件的预约</h2><p>清除筛选后可查看全部预约记录。</p><a class="btn btn-brand" href="admin-reservations.html">清除筛选</a></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="modal fade" id="adminCancelModal" tabindex="-1" aria-labelledby="adminCancelTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title fs-5" id="adminCancelTitle">确认取消预约</h2><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="关闭"></button></div><div class="modal-body">将取消王同学在 A-001 的下午预约，座位时段会立即释放。</div><div class="modal-footer"><button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">返回</button><a class="btn btn-danger" href="admin-reservations.html?state=success">确认取消</a></div></div></div>
+  </div>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="adminNav" aria-labelledby="adminNavTitle">
+    <div class="offcanvas-header"><h2 class="offcanvas-title fs-5" id="adminNavTitle">管理导航</h2><button class="btn-close" type="button" data-bs-dismiss="offcanvas" aria-label="关闭"></button></div>
+    <div class="offcanvas-body"><nav class="d-grid gap-2"><a class="btn btn-outline-brand" href="admin-stats.html">统计</a><a class="btn btn-brand" href="admin-reservations.html">预约管理</a><a class="btn btn-outline-brand" href="admin-seats.html">座位管理</a><a class="btn btn-outline-secondary" href="admin-login.html">退出登录</a></nav></div>
+  </div>
+
+  <script src="assets/bootstrap.bundle.min.js"></script>
+  <script src="assets/prototype.js"></script>
+</body>
+</html>

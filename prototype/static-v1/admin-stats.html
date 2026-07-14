@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>统计页 | 图书馆座位预约系统</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <div class="admin-layout">
+    <aside class="admin-sidebar" aria-label="管理端侧边栏">
+      <a class="brand-lockup" href="admin-stats.html"><span class="brand-mark" aria-hidden="true">阅</span><span>座位预约后台</span></a>
+      <nav class="admin-nav">
+        <a class="active" href="admin-stats.html" aria-current="page"><span aria-hidden="true">▦</span>统计</a>
+        <a href="admin-reservations.html"><span aria-hidden="true">≡</span>预约管理</a>
+        <a href="admin-seats.html"><span aria-hidden="true">□</span>座位管理</a>
+      </nav>
+      <div class="admin-sidebar-footer">
+        <a class="d-block text-white-50 small mb-2" href="index.html">返回用户端</a>
+        <a class="d-block text-white text-decoration-none" href="admin-login.html">退出登录</a>
+      </div>
+    </aside>
+
+    <div>
+      <div class="admin-mobile-bar">
+        <a class="brand-lockup" href="admin-stats.html"><span class="brand-mark" aria-hidden="true">阅</span><span>管理后台</span></a>
+        <button class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#adminNav" aria-controls="adminNav" aria-label="打开管理导航">☰</button>
+      </div>
+      <main class="admin-content" id="main-content">
+        <header class="admin-header">
+          <div><p class="eyebrow">A-P04 · static-v1</p><h1>统计概览</h1><p>查看座位和预约的基础数据。</p></div>
+          <span class="text-muted small">数据更新时间：2026-07-13 10:20</span>
+        </header>
+
+        <div class="alert-prototype alert-danger-soft mb-3" data-state-view="error" role="alert">
+          <span aria-hidden="true">!</span><div><strong>统计数据加载失败</strong>请刷新页面重试。</div>
+        </div>
+
+        <section class="admin-stat-grid" data-state-view="default">
+          <article class="admin-stat-card"><span class="metric-label">座位总数</span><strong class="stat-value">12</strong><div class="stat-foot"><span>全部座位</span><a href="admin-seats.html">查看</a></div></article>
+          <article class="admin-stat-card"><span class="metric-label">启用座位数</span><strong class="stat-value">10</strong><div class="stat-foot"><span class="status-tag status-enabled">启用</span><span>83%</span></div></article>
+          <article class="admin-stat-card"><span class="metric-label">停用座位数</span><strong class="stat-value">2</strong><div class="stat-foot"><span class="status-tag status-disabled">停用</span><span>17%</span></div></article>
+          <article class="admin-stat-card"><span class="metric-label">预约总数</span><strong class="stat-value">3</strong><div class="stat-foot"><span>含全部状态</span><a href="admin-reservations.html">查看</a></div></article>
+          <article class="admin-stat-card"><span class="metric-label">今日非取消预约数</span><strong class="stat-value">1</strong><div class="stat-foot"><span>含已完成</span><span>今日</span></div></article>
+        </section>
+
+        <section class="admin-stat-grid" data-state-view="empty">
+          <article class="admin-stat-card"><span class="metric-label">座位总数</span><strong class="stat-value">0</strong><div class="stat-foot"><span>暂无数据</span></div></article>
+          <article class="admin-stat-card"><span class="metric-label">启用座位数</span><strong class="stat-value">0</strong><div class="stat-foot"><span>暂无数据</span></div></article>
+          <article class="admin-stat-card"><span class="metric-label">停用座位数</span><strong class="stat-value">0</strong><div class="stat-foot"><span>暂无数据</span></div></article>
+          <article class="admin-stat-card"><span class="metric-label">预约总数</span><strong class="stat-value">0</strong><div class="stat-foot"><span>暂无数据</span></div></article>
+          <article class="admin-stat-card"><span class="metric-label">今日非取消预约数</span><strong class="stat-value">0</strong><div class="stat-foot"><span>暂无数据</span></div></article>
+        </section>
+
+        <section class="admin-stat-grid" data-state-view="error">
+          <article class="admin-stat-card"><span class="metric-label">座位总数</span><strong class="stat-value">—</strong><div class="stat-foot"><span>暂不可用</span></div></article>
+          <article class="admin-stat-card"><span class="metric-label">启用座位数</span><strong class="stat-value">—</strong><div class="stat-foot"><span>暂不可用</span></div></article>
+          <article class="admin-stat-card"><span class="metric-label">停用座位数</span><strong class="stat-value">—</strong><div class="stat-foot"><span>暂不可用</span></div></article>
+          <article class="admin-stat-card"><span class="metric-label">预约总数</span><strong class="stat-value">—</strong><div class="stat-foot"><span>暂不可用</span></div></article>
+          <article class="admin-stat-card"><span class="metric-label">今日非取消预约数</span><strong class="stat-value">—</strong><div class="stat-foot"><span>暂不可用</span></div></article>
+        </section>
+
+        <div class="trend-row mt-3" data-state-view="default">
+          <section class="admin-panel mt-0">
+            <div class="admin-panel-header"><h2>近 5 日预约走势</h2><span class="text-muted small">静态示意</span></div>
+            <div class="trend-bars" aria-label="近5日预约数：7月9日2条，10日4条，11日3条，12日5条，13日1条">
+              <div class="trend-bar"><span style="height: 42%"></span><small>07-09</small></div>
+              <div class="trend-bar"><span style="height: 72%"></span><small>07-10</small></div>
+              <div class="trend-bar"><span style="height: 58%"></span><small>07-11</small></div>
+              <div class="trend-bar"><span style="height: 88%"></span><small>07-12</small></div>
+              <div class="trend-bar"><span style="height: 26%"></span><small>07-13</small></div>
+            </div>
+          </section>
+          <section class="admin-panel mt-0">
+            <div class="admin-panel-header"><h2>预约状态分布</h2></div>
+            <div class="distribution-list">
+              <div class="distribution-item"><span>已预约</span><div class="distribution-track"><div class="distribution-fill" style="width: 34%"></div></div><strong>1</strong></div>
+              <div class="distribution-item"><span>已完成</span><div class="distribution-track"><div class="distribution-fill" style="width: 34%; background:#65716d"></div></div><strong>1</strong></div>
+              <div class="distribution-item"><span>已取消</span><div class="distribution-track"><div class="distribution-fill" style="width: 34%; background:#9b2c2c"></div></div><strong>1</strong></div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="adminNav" aria-labelledby="adminNavTitle">
+    <div class="offcanvas-header"><h2 class="offcanvas-title fs-5" id="adminNavTitle">管理导航</h2><button class="btn-close" type="button" data-bs-dismiss="offcanvas" aria-label="关闭"></button></div>
+    <div class="offcanvas-body"><nav class="d-grid gap-2"><a class="btn btn-brand" href="admin-stats.html">统计</a><a class="btn btn-outline-brand" href="admin-reservations.html">预约管理</a><a class="btn btn-outline-brand" href="admin-seats.html">座位管理</a><a class="btn btn-outline-secondary" href="admin-login.html">退出登录</a></nav></div>
+  </div>
+
+  <script src="assets/bootstrap.bundle.min.js"></script>
+  <script src="assets/prototype.js"></script>
+</body>
+</html>
